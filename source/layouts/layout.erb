@@ -11,9 +11,28 @@
 
     <%= stylesheet_link_tag "normalize", "all" %>
     <%= javascript_include_tag  "all" %>
+
+		<!-- ArcGIS API for JavaScript links -->
+		<link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+		<script src="http://js.arcgis.com/3.14/"></script>
+		<script>
+
+
+var map;
+require(["esri/map", "dojo/domReady!"], function(Map) {
+  map = new Map("mapDiv", {
+    center: [-56.049, 38.485],
+    zoom: 3,
+    basemap: "streets"
+  });
+});
+
+
+		</script>
+
   </head>
 
-  <body class="<%= page_classes %>">
+  <body class="<%= page_classes %> claro">
     <%= yield %>
   </body>
 </html>
